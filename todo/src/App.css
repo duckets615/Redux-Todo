@@ -1,28 +1,64 @@
-.App {
-  text-align: center;
+.todo-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.todo-list .container {
+  width: 200px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.completed {
+  text-decoration: line-through;
 }
 
-.App-title {
-  font-size: 1.5em;
+.new-todo.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-intro {
-  font-size: large;
+.new-todo label {
+  position: absolute;
+  left: 12px;
+  top: 17px;
+  font-size: 12px;
+  transform: none;
+  transition: transform .1s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.new-todo input {
+  height: 50px;
+  font-size: 16px;
+  display: flex;
+  padding-left: 10px;
+  transition: padding .1s ease-in-out;
+}
+
+.todo-button {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.add-todo {
+  background-color: paleturquoise;
+}
+
+.remove-todo {
+  background-color: palevioletred;
+}
+
+.typing {
+  font-size: 12px;
+  padding: 14px 0 2px 8px!important;
+}
+
+label.is-typing {
+  transform: scale(.83333) translateY(-15px) translateX(-8px);
 }
