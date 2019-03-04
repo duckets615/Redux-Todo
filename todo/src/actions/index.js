@@ -1,16 +1,19 @@
+export const ACTIONS = {
+    HANDLE_INPUT: 'HANDLE_INPUT',
+    ADD_TODO: 'ADD_TODO', 
+    COMPLETE_TODO: 'COMPLETE_TODO', 
+    DELETE_TODO: 'DELETE_TODO'
+};
 
-export const ADD_TODO = 'ADD_TODO';
-export const TOOGLE_COMPLETED = 'TOOGLE_COMPLETED';
+// Handle Input
+export const handleInput = (text, eventTarget) => ({type: ACTIONS.HANDLE_INPUT, text: text, target:eventTarget})
 
-export const addTodo = todo => {
-  return {
-  type: ADD_TODO,
-  payload: todo,
-}}
+// Add
+export const todoAdd = () => ({type: ACTIONS.ADD_TODO});
 
-export const toggleCompleted = id => {
-  return {
-    type: TOOGLE_COMPLETED,
-    payload: id
-  }
-}
+// Complete
+export const todoComplete = id => ({type: ACTIONS.COMPLETE_TODO, id: id});
+
+// Delete
+export const todoDelete = () => ({type: ACTIONS.DELETE_TODO});
+
