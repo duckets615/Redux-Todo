@@ -1,14 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-
-function Todo(props) {
+const Todo = props => {
     return (
-      <Fragment>
-       {props.todos.map(todo => {
-        return <li key={todo.id} onClick={()=> props.toggleCompleted(todo.id)} style={{textDecoration: todo.completed ? 'line-through': 'none'}}>{todo.value}</li>        
-      })}
-      </Fragment>
-    ) 
+        <div onClick = {e => props.complete(e.currentTarget.id)} id={`${props.id}`} className={`todo-${props.id}`+`${props.completed ? " completed" : ""}`}>
+            <p>{props.text}</p>
+        </div>
+    )
 }
 
 export default Todo;
